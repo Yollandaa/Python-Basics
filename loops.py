@@ -61,5 +61,5 @@ numing = [len(ave) for ave in avengers]
 print(numing)
 
 #acreate list Names of those with more than 10 characters
-more_than_ten = [ave for ave in avengers if len(ave) > 10]
+more_than_ten = [ave.upper() for ave in avengers if len(ave) > 10]
 print(more_than_ten)
