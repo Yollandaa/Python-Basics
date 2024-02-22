@@ -88,6 +88,5 @@ print("Indoor gadgets: ", get_gadgets(activity_gadgets, indoor_activities))
 
 print()
 
-d
 
 
