@@ -148,13 +148,21 @@ movie_copy1 = movie.copy()
 movie_copy11 = {**movie}
 
 movie_copy2 = {**movie, "rating": 10}
+print()
 print(movie_copy2)
+print(movie)
 
-movie_copy3 =  {**movie, "rating": 10, "year": 2002}
+# The right most value replaces the left most value if the key already exists.
+movie_copy3 =  {**movie, "rating": 10, "year": 2002} #This one replaced 2001 with 2002
+print()
 print(movie_copy3)
+print(movie)
 
-movie_copy4 =  {"rating": 10, "year": 2002, **movie}
+movie_copy4 =  {"rating": 10, "year": 2002, **movie} #This one remained 2001
+print()
 print(movie_copy4)
+print(movie)
+
 
 detail = {
   "actor": "leon schuster",
@@ -162,8 +170,11 @@ detail = {
 }
 
 movie_detail = {**movie, **detail}
+print()
 print(movie_detail)
+print(movie)
 
+print()
 #Unpacking lists
 price = [1000, 1200, 400]
 price_copy = [*price]
