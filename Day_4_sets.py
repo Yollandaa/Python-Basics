@@ -30,7 +30,7 @@ print(indoor_activities.union(outdoor_activities))
 
 print(outdoor_activities.difference(indoor_activities))  #
 print(indoor_activities.difference(outdoor_activities))  # {Gaming, cycling}
-print(indoor_activities.symmetric_difference(outdoor_activities))
+print(indoor_activities.symmetric_difference(outdoor_activities)) # Excludes the intersection
 
 print()
 
