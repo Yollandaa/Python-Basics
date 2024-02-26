@@ -1,3 +1,5 @@
+from pprint import pprint
+
 movies = [
     {"title": "Inception", "ratings": [5, 4, 5, 4, 5]},
     {"title": "Interstellar", "ratings": [5, 5, 4, 5, 4]},
@@ -8,12 +10,12 @@ movies = [
 
 # Get the movie titles
 titles = list(map(lambda movie: movie["title"], movies))
-print(titles)
+pprint(titles)
 
 # Task 1: Find average rating for all - map, filter, all ...
 # Do not use for loop
 rates = list(map(lambda x: sum(x["ratings"]) / len(x["ratings"]), movies))
-print(rates)
+pprint(rates)
 
 def get_avg(movie):
   return sum(movie["ratings"]) / len(movie["ratings"])
@@ -26,7 +28,7 @@ print()
 
 # lambda function that creates a copy {**movie, "average_rating": rate}}
 ratings_movies = list(map(lambda movie, rate: {**movie, "average_rating": rate}, movies, rates))
-print(ratings_movies)
+pprint(ratings_movies)
 # movies_average_ratings = map(lambda movie: {**movie, "average_rating": find_avg(movie)}, movies)
 
 print()
@@ -34,7 +36,7 @@ print()
 # Output should be "The Dark Knight"
 # Key is which value to use when looking for the maximum, so the average rating
 top_rated_movie = max(ratings_movies, key=lambda x: x["average_rating"])
-print(f"{top_rated_movie['title']} is the most top rated movie")
+pprint(f"{top_rated_movie['title']} is the most top rated movie")
 
 print()
 # Task 3: Get the movie titles with average rating >= 4.6
@@ -47,4 +49,4 @@ print()
 # Task 4: Get the movies in order of rating
 ordered_rated_movies = sorted(ratings_movies, key=lambda x: x["average_rating"], reverse=True)
 ordered_only_titles = list(map(lambda movie: movie["title"], ordered_rated_movies))
-print(ordered_only_titles)
+pprint(" ,".join(ordered_only_titles[0:3]))

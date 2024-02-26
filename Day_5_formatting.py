@@ -4,6 +4,7 @@ print(salary)
 
 #Float
 print(f"Dhars's salary R{salary:,}")
+print(f"Dhars's salary R{salary:_}")
 print(f"Dhars's salary R{salary:.2f}")
 print(f"Dhars's salary R{round(salary)}")
 
@@ -13,6 +14,7 @@ print(f"{name:>20}")
 print(f"{name:<20}")
 print(f"{name:^20}")
 
+# Padding 
 print(f"{name:*>20}")
 print(f"{name:#<20}")
 print(f"{name:$^20}")
