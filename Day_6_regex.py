@@ -81,8 +81,12 @@ print(result)
 
 print()
 
-names = ["John Doe", "Jane Smith", "Alice Johnson", "Chris Evans", "JamesCodey"]
+names = ["John Doe  ", "Jane Smith", "Alice Johnson", "   Chris Evans", "JamesCodey"]
 # Switch the first and last name
 # Expected output: ["Doe, John", "Smith, Jane", "Johnson, Alice", "Evans, Chris"]
-switched_names = [re.sub(r'(\w+)\s+(\w+)', r'\2, \1', name) for name in names]
+switched_names = [re.sub(r'(\w+)\s+(\w+)', r'\2, \1', name).strip() for name in names]
 print(switched_names)
+
+
+groups = re.search(r'(\w+) (\w+)', 'Hello World')
+print(groups.groups())
