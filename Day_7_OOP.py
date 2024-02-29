@@ -78,7 +78,7 @@ print(dhara.withdraw(30_000))
 
 
 # Class variables: Share the value between the class objects/instances
-# Encapsulation: Putting all your variables/classes and methods into one container | giving access
+# Encapsulation: Putting all your variables/classes and methods into one container | giving access -> private, public, protected
 # put double underscore in the variable to make it private, do not allow it be be changed outside of the class Bank
 class Bank:
     interest_rate = 0.02
@@ -154,7 +154,7 @@ print("--------------------------------")
 
 # Task
 class Circle:
-    pi = 3.14159  # Class variable
+    pi = 3.14159  # Class variable: All instances share the same value
 
     def __init__(self, radius):
         self.radius = radius
