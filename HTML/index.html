@@ -11,6 +11,8 @@
     <!-- Tab Name -->
     <title>Tab Name</title>
 
+    <!-- Internal/Embedded CSS-->
+    <!-- Prefered when you want performance: no loading of extra file for style: Everything is loaded in one go-->
     <style>
         ul {
             color: crimson;
@@ -28,9 +30,34 @@
             text-align: center;
             text-transform: uppercase;
         }
+
+        h2 {
+            text-decoration: overline;
+            letter-spacing: 10px;
+            line-height: 0.5;
+
+        }
+
+        h3 {
+            text-align: center;
+            text-transform: uppercase;
+            /*The smaller the text, the more line height*/
+            letter-spacing: 0.5cm;
+            font-weight: bold;
+        }
     </style>
+
+    <!-- Separation of concern, ReUse-->
+    <!-- External CSS: Most preferred-->
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <ul class="navigation">
+        <li><a href="/">Home</a></li>
+        <li><a href="selector.html">Selector</a></li>
+        <li><a href="http://www.google.com/">Google </a></li>
+    </ul>
+
     <!-- Tags/Elements -->
     <!-- Anything you want on the page is here: but html is very forgiving-->
     <h1>Hello, Sanlam 🚀🚀😷</h1>
@@ -42,8 +69,10 @@
 
     <p>Lorem ipsum 🚀🤩</p>
 
+    <h3> gucci</h3>
+
     <h2> Hobbies</h2>
-    <ol>
+    <ol style=color:orange;>
         <!-- List Items-->
         <li>Running</li>
         <li>Reading</li>

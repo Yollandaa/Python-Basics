@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        Types of selectors::
+        1. element - p, h2, h3
+        2. class - .brand, .fun
+        3. id - #main
+        */
+        /* .brand -> class selector*/
+        .brand {
+            font-weight: 600;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            color: orange;
+
+        }
+
+        /* Unique per page: Use only once */
+        #main {
+            color: purple;
+            font-size: 24px;
+        }
+
+        #content {
+            line-height: 1.5;
+        }
+
+        a {
+            text-decoration: none;
+            color: hotpink;
+        }
+
+        .container {
+            background-color: skyblue;
+
+        }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <ul class="navigation">
+        <li><a href="/">Home</a></li>
+        <li><a href="/selector.html">Selector</a></li>
+        <li><a href="http://www.google.com/">Google </a></li>
+    </ul>
+    
+    <p class="brand">gucci</p>
+    <h2 class="brand"> luxury brand</h2>
+
+    <div class="container">
+        <p id="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    
+        <p id="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    
+        <p id="content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    
+    </div>
+ 
+    <ul>
+        <!-- List Items-->
+        <li id="main">Running</li>
+        <li>Reading</li>
+        <li class="brand">Sleeping</li>
+        <li>Video Gaming</li>
+        <li>Scrolling</li>
+    </ul>
+</body>
+</html>

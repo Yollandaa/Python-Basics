@@ -2,9 +2,10 @@ def math_divide(n1, n2):
     try:
         result = n1 / n2
         print(f"The answer is {result}")
-    except ZeroDivisionError:
+    except:
         # When there is an error
         print(f"You cannot divide by zero! 💀")
+
     else:
         # When there is no error
         print(f"Division was successful. ✅")
@@ -79,6 +80,6 @@ def only_positive_num():
 
 
 if __name__ == "__main__":
-    # print(math_divide(20, 1))
+    print(math_divide(20, 0))
     # calculate_age2()
-    only_positive_num()
+    # only_positive_num()
