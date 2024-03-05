@@ -10,22 +10,69 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    body {
+        margin: 0;
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+        font-family: "roboto", sans-serif;
+        }
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+
     .container {
       background: #0a0c1b;
       display: flex;
-      /* justify-content: center; */
+      justify-content: center;
       align-items: center;
+      padding: 50px;
     }
 
     .content {
       background: rgb(28,25,56);
       color: white;
+      width: 50%;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .cont2 {
+      background-color: #9f5acf;
+      max-width: 50%;
     }
     .image {
-      background: pink;
+      height: 255px;
       object-fit: cover;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      mix-blend-mode: luminosity; ;
+    }
+    h2 {
+      text-align: start;
+    }
+    span {
+      color: #9f5acf;
+    }
+    .para {
+      color: #7f7d94;
+      font-size: smaller;
+    }
+    .nums{
+      color: #e2e3eb;
+      font-style: bold;
+    }
+    .social-media-spec {
+      display: flex;
+      justify-content: space-between;
+      font-size: 20px;
+    }
+    .social-media-info {
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #7f7d94;
+      margin-top: 0;
+    }
+    .social-media-number {
+      margin-bottom: 0;
     }
 
   </style>
@@ -36,16 +83,30 @@
     <div class="content">
       <h2>Get <span>insights</span> that help your business grow.</h2>
   
-    <p> Discover the benefits of data analytics and make better decisions regarding revenue, customer 
+      <p class="para"> Discover the benefits of data analytics and make better decisions regarding revenue, customer 
       experience, and overall efficiency.</p>
   
-    <a>10k+ companies</a>
-    <a>314 templates</a>
-    <a>12m+ queries</a>
+      <div class="social-media-spec">
+        <div>
+          <p class = social-media-number>10k+</p> 
+          <p class="social-media-info">companies</p>
+        </div>
+  
+        <div>
+          <p class = social-media-number>314</p> 
+          <p class="social-media-info">templates</p>
+        </div>
+        
+        <div>
+          <p class = social-media-number>12M+</p> 
+          <p class="social-media-info">queries</p>
+        </div>
+      </div>
+      
     </div>
   
-    <div class="image">
-      <img src="./images/image-header-desktop.jpg" alt="">
+    <div class="cont2">
+      <img class="image" src="./images/image-header-desktop.jpg" alt="">
     </div>
   
 
