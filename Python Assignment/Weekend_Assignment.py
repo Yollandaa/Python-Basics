@@ -132,8 +132,7 @@ class WizardDuel:
         self.health_points = health_points
 
     def cast_spell(self, spell):
-        # reduce points here
-        print(f"{self.name} casts {self.spell}")
+        print(f"{self.name} casts {spell}")
 
     def reduce_points(self, points):
         self.health_points -= points
@@ -146,7 +145,17 @@ class WizardDuel:
             print(f"{self.name} has won!")
 
 
-print(f"Not done here, come back to it. Q10!!")
+harry = WizardDuel("Harry", 20)
+Draco = WizardDuel("Draco", 20)
+# Attacks
+
+harry.cast_spell("Lumos")
+Draco.reduce_points(15)
+Draco.cast_spell("Obliviate")
+harry.reduce_points(10)
+harry.cast_spell("Lumos")
+Draco.reduce_points(15)
+harry.determine_winner()
 
 print("\n Question 11")
 
@@ -205,7 +214,6 @@ for house_point in house_points:
         points_total[house_point["house"]] = house_point["points"]
 
 pprint(points_total)
-print("I did not use a nested loop")
 
 print(f"\n Question 14")
 
