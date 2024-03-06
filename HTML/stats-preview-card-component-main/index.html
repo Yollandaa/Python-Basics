@@ -20,31 +20,38 @@
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
 
-    .container {
-      background: #0a0c1b;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 50px;
-    }
-
+       /* Gets activated after 440px */
+       .container {
+            background: #0a0c1b;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* justify-content: center;
+            align-items: center; */
+            padding: 50px;
+          }
     .content {
       background: rgb(28,25,56);
       color: white;
-      width: 50%;
+      /* width: 50%; */
       padding: 20px;
       border-radius: 10px;
     }
     .cont2 {
       background-color: #9f5acf;
-      max-width: 50%;
+      border-radius: 10px;
+      /* max-width: 50%; */
     }
     .image {
-      height: 255px;
-      object-fit: cover;
+      /* height: 255px; */
+      /* object-fit: cover; */
+      width: 410px;
       border-top-right-radius: 10px;
       border-bottom-right-radius: 10px;
       mix-blend-mode: luminosity; ;
+    }
+    .cont2 img {
+      height: 100%;
+      width: 100%;
     }
     h2 {
       text-align: start;
@@ -60,11 +67,7 @@
       color: #e2e3eb;
       font-style: bold;
     }
-    .social-media-spec {
-      display: flex;
-      justify-content: space-between;
-      font-size: 20px;
-    }
+
     .social-media-info {
       text-transform: uppercase;
       font-size: 14px;
@@ -75,6 +78,35 @@
       margin-bottom: 0;
     }
 
+    
+    .social-media-spec {
+      /* display: flex; */
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: space-between;
+      font-size: 20px;
+    }
+    
+    @media (max-width: 400px) {
+      .container {
+            display: flex;
+            flex-direction: column;
+            flex-direction: column-reverse;
+          }
+
+      
+    .social-media-spec {
+      /* display: flex; */
+      display: grid;
+      grid-template-columns:  1fr;
+      justify-items: center;
+    }
+
+    .social-media-number {
+      align-items: center;
+    }
+
+    }
   </style>
 </head>
 <body>

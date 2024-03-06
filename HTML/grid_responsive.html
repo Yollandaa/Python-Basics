@@ -5,32 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /* In bigger screens it should be next to eachother */
         .box1 {
             background: plum;
-            width: 200px;
         }
         .box2 {
             background: purple;
-            width: 50px;
         }
         .box3 {
             background: pink;
-            width: 100px;
-        }
-        .flex-container {
-            /* display: flex; */
-            display: flex;
-            /* Ration 1fr 2fr -> second column is double the space of first one */
-            /* grid-template-columns: 1fr 1fr 1fr; */
-            /* Rewrite: grid-template-columns: repeat(3, 1fr) */
-            /* grid-template-columns: 1fr 2fr 1fr; */
         }
         .grid-container {
             display: grid;
-            /* Ration 1fr 2fr -> second column is double the space of first one */
-            /* grid-template-columns: 1fr 1fr 1fr; */
-            /* Rewrite: grid-template-columns: repeat(3, 1fr) */
-            grid-template-columns: 1fr 1fr 1fr;
+            /* RAM -> repeat auto fir min-max */
+            /* Shortest technique to make it responsive */
+            /* Minimum each column should be 200px, once it shrinks below the min, break it down, form another row (below) */
+            /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));  */
+            /* grid-template-columns: repeat(3, 1fr); */
+        }
+
+        @media (min-width: 440px) {
+            /* Gets activated after 440px */
+            .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
         }
     </style>
 </head>

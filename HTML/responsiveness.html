@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Mobile first approach */
+        .box1 {
+            background: plum;
+            height: 300px;
+            width: 300px;
+        }
+
+        @media (min-width: 900px) {
+            /* until (0-900) acts like commented code */
+            .box1{
+                background-color: purple;
+                border-radius: 50%;
+            }
+        }
+        
+        @media (min-width: 425px) {
+            /* until (0-425) acts like commented code */
+            .box1{
+                background-color: crimson;
+            }
+        }
+
+      
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+            <p>Lorem ipsum dolor sit amet. Est veritatis suscipit ea exercitationem magni ut laborum veniam et corporis maiores. Ea voluptas aliquam aut voluptatem dolor et numquam similique.</p>
+        </div>
+</body>
+</html>

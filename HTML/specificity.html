@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS - Cascading (0veride) Style Sheet-->
+    <style>
+        .fun {
+            color: pink;
+        }
+        p{
+            color: crimson;
+        }
+        p {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <p style="color: teal;" class="fun" >Para</p>
+</body>
+</html>
+<!-- Specificity -> when there is a clash between styles which takes priority: -->
+<!--  (!important (UN)> inlline (president) > id (mother)) > class (father) > element (you) -->
