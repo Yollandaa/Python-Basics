@@ -32,7 +32,7 @@ body{
 .testimonials .testimonial-row .testimonial-col{
     flex-basis: 30%;
 }
-
+/* Use margin auto with flex */
 .testimonials .testimonial-row .testimonial-col img{
     border-radius: 50%;
     width: 50px;
