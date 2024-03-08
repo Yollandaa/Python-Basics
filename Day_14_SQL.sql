@@ -147,47 +147,159 @@ INNER JOIN boxoffice
 -- List all movies and their ratings in percent
 SELECT DISTINCT
     title,
-    (rating * 10) AS rate_percent
+    (rating * 10) AS percent
 FROM movies
 INNER JOIN boxoffice
-    ON movies.id = boxoffice.movie_id;
+    ON id = movie_id;
 
 -- List all movies that were released on even number years
-SELECT title FROM movies WHERE year % 2 = 0;
+SELECT title 
+FROM movies 
+WHERE year % 2 = 0;
+
 
 -- TASK 10
 
 -- Find the longest time that an employee has been at the studio.
-SELECT name, MAX(years_employed) FROM employees;
+SELECT Role, Name, MAX(years_employed) AS Years_employed 
+FROM employees;
 
 -- For each role, find the average number of years employed by employees in that role
-SELECT role, AVG(years_employed) as Average_years_employed
+SELECT role, AVG(years_employed) AS Average_years_employed
 FROM employees
 GROUP BY role;
 
 -- Find the total number of employee years worked in each building
-SELECT building, SUM(years_employed) FROM employees GROUP BY building
+SELECT building, SUM(years_employed)  AS Total_years_worked
+FROM employees 
+GROUP BY building
 
 -- TASK 11
 
 -- Find the number of Artists in the studio (without a HAVING clause)
-SELECT COUNT(*) FROM employees WHERE role LIKE 'artist';
+SELECT COUNT(*) 
+FROM employees 
+role = 'Artist'
 
 -- Find the number of Employees of each role in the studio
-SELECT role, COUNT(Name) FROM employees GROUP BY role;
+SELECT role, COUNT(Name) AS Number_of_employees
+FROM employees 
+GROUP BY role;
 
 -- Find the total number of years employed by all Engineers
-SELECT role, SUM(years_employed) FROM employees 
-GROUP BY role HAVING role LIKE 'engineer';
+SELECT role, SUM(years_employed) AS sum_years_employed
+FROM employees 
+WHERE role = 'Engineer';
 
 -- TASK 12
 
 -- Find the number of movies each director has directed
-SELECT director, COUNT(*) FROM movies GROUP BY director;
-
--- Find the total domestic and international sales that can be attributed to each director
-SELECT director, SUM(domestic_sales) + SUM(international_sales) AS Total
+SELECT director, COUNT(*) AS movies_directed
 FROM movies 
-LEFT JOIN boxoffice ON movies.id = boxoffice.movie_id 
 GROUP BY director;
 
+-- Find the total domestic and international sales that can be attributed to each director
+SELECT director, SUM(domestic_sales) + SUM(international_sales) AS Total_sales
+FROM movies 
+INNER JOIN boxoffice ON id = movie_id 
+GROUP BY director;
+
+-- TASK 13
+
+-- Add the studio's new production, Toy Story 4 to the list of movies (you can use any director)
+INSERT INTO movies (title, director, year, length_minutes) 
+VALUES ('Toy Story 4', 'Brad Bird', 2019, 100);
+
+-- Toy Story 4 has been released to critical acclaim! It had a rating of 8.7, and made 340 million domestically and 270 million internationally. Add the record to the BoxOffice table. 
+INSERT INTO boxoffice (movie_id, rating, domestic_sales, international_sales) 
+VALUES (15, 8.7, 340000000, 270000000);
+
+
+-- TASK 14
+
+-- The director for A Bug's Life is incorrect, it was actually directed by John Lasseter
+UPDATE movies
+SET director = "John Lasseter"
+WHERE title = "A Bug's Life";
+
+-- The year that Toy Story 2 was released is incorrect, it was actually released in 1999
+UPDATE movies
+SET year = 1999
+WHERE title = "Toy Story 2";
+
+-- Both the title and director for Toy Story 8 is incorrect! The title should be "Toy Story 3" and it was directed by Lee Unkrich
+
+UPDATE movies
+SET title = "Toy Story 3",
+    director = "Lee Unkrich"
+WHERE title = "Toy Story 8";
+
+-- TASK 15
+
+-- This database is getting too big, lets remove all movies that were released before 2005.
+
+-- the select statement
+SELECT * FROM movies
+WHERE year < 2005
+
+DELETE FROM movies
+WHERE year < 2005;
+
+-- Andrew Stanton has also left the studio, so please remove all movies directed by him.
+
+-- the select statement
+SELECT * FROM movies
+WHERE director = "Andrew Stanton";
+
+DELETE FROM movies
+WHERE director = "Andrew Stanton";
+
+
+-- TASK 16
+
+-- Create a new table named Database with the following columns:
+-- – Name A string (text) describing the name of the database
+-- – Version A number (floating point) of the latest version of this database
+-- – Download_count An integer count of the number of times this database was downloaded
+-- This table has no constraints.
+
+CREATE TABLE Database (
+    name TEXT,
+    version FLOAT, 
+    download_count INTEGER
+);
+
+
+-- TASK 17
+-- Altering table name
+ALTER TABLE mytable
+RENAME TO new_table_name;
+
+-- Altering table to add new column(s)
+ALTER TABLE mytable
+ADD column_name DataType OptionalTableConstraint 
+    DEFAULT default_value;
+
+-- Altering table to remove column(s)
+ALTER TABLE mytable
+DROP column_to_be_deleted;
+
+-- Add a column named Aspect_ratio with a FLOAT data type to store the aspect-ratio each movie was released in.
+ALTER TABLE movies
+ADD Aspect_ratio FLOAT;
+
+-- Add another column named Language with a TEXT data type to store the language that the movie was released in. Ensure that the default for this language is English.
+ALTER TABLE movies
+ADD Language TEXT 
+    DEFAULT "English";
+
+
+-- TASK 18
+-- Drop table statement
+DROP TABLE IF EXISTS mytable;
+
+--We've sadly reached the end of our lessons, lets clean up by removing the Movies table
+DROP TABLE IF EXISTS movies;
+
+-- And drop the BoxOffice table as well
+DROP TABLE IF EXISTS BoxOffice;
