@@ -49,13 +49,15 @@ async def main():
 asyncio.run(main())
 
 # Task 3: Make task 2 DRY
-
-
-async def main():
-    tasks = [
-        get_city_temp("Chennai"),
-        get_city_temp("Johannesburg"),
-        get_city_temp("Durban"),
-    ]
-
-    await asyncio.gather(*tasks)
+cities = [
+    "New York",
+    "Tokyo",
+    "London",
+    "Paris",
+    "Dubai",
+    "Singapore",
+    "Sydney",
+    "Istanbul",
+    "Hong Kong",
+    "Cape Town",
+]
